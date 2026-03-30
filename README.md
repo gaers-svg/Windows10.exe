@@ -1,8 +1,3 @@
-# Note
-Do not run this on your main system. This malware can damage your computer permanently.
- 
- 
- 
- 
 # Windows10.exe
-Some malware I made for fun (only run it on a VM)
+Windows10.exe is a virus I made that is based off of the OS system known as Windows 10. Windows10.exe can permanently cause damage to your computer. This malware is for educational purposes only, and should not be used to attack anyone else's computer (it is the law)
+I am not responsible for any damages caused by this program.
