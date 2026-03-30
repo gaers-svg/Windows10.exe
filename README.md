@@ -1,4 +1,4 @@
-#Note
+# Note
 Do not run this on your main system. This malware can damage your computer permanently.
 
 
