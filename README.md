@@ -1,2 +1,2 @@
 # ishowmalware
-do not run on normal computer. only run on vm *not responsible for any computer damages*
+do not run on normal computer. only run on vm. *i am not responsible for any computer damages*
