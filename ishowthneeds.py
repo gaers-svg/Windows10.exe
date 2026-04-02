@@ -24,12 +24,7 @@ def gdifunction():
             time.sleep(0.02)
     except KeyboardInterrupt:
         print("Stopped safely")
-def gdifunction2():
-    try:
-        while True: 
-            subprocess.run(["python", "-c", "import ctypes as c; g=c.windll.gdi32;d=c.windll.user32.GetDC(0);[g.StretchBlt(d, 5, 5, 1910, 1070, d, 0, 0, 1920, 1080, 0x999999) for _ in range(10**1)]"])
-            while pygame.mixer.music.get_busy():
-                time.sleep(0.1)
+
 
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -42,7 +37,7 @@ def open(question, answer):
         if response2:
             messagebox.showerror("ishowthneeds", "you made a huge mistake.")
             gdifunction()
-            gdifunction2()
+            subprocess.run(["python", "-c", "import ctypes as c; g=c.windll.gdi32;d=c.windll.user32.GetDC(0);[g.StretchBlt(d, 5, 5, 1910, 1070, d, 0, 0, 1920, 1080, 0x999999) for _ in range(10**1)]"])
             music()
         else:
             print("wise choice")
