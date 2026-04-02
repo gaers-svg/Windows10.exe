@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import messagebox
 import time
 import ctypes as c
-from playsound3 import playsound
 import pygame
 import subprocess
 
@@ -13,8 +12,6 @@ g=c.windll.gdi32
 width = user32.GetSystemMetrics(0)
 height = user32.GetSystemMetrics(1)
 
-def music():
-    playsound("https://raw.githubusercontent.com/gaers-svg/ishowthneeds/main/getyopoopycomputerouttaherebro.mp3")
 
 def gdifunction():
     try:
@@ -38,7 +35,6 @@ def open(question, answer):
             messagebox.showerror("ishowthneeds", "you made a huge mistake.")
             gdifunction()
             subprocess.run(["python", "-c", "import ctypes as c; g=c.windll.gdi32;d=c.windll.user32.GetDC(0);[g.StretchBlt(d, 5, 5, 1910, 1070, d, 0, 0, 1920, 1080, 0x999999) for _ in range(10**1)]"])
-            music()
         else:
             print("wise choice")
 open("Warning", "This program has the full potential to destroy your computer. Do you want to continue? ")
