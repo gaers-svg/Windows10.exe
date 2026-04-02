@@ -7,27 +7,31 @@ from playsound3 import playsound
 user32 = c.windll.user32
 d=c.windll.user32.GetDC(0)
 g=c.windll.gdi32
-def gdifunction():
-    try:
-        while True:
-           time.sleep(0.1)
-           g.stretchblt(d, 5, 5, 1910, 1070, d, 0, 0, 1920, 1080, 0x999999)
-    except KeyboardInterrupt:
-        g.DeleteDC(d)
-        print("poop!")
+
+width = user32.GetSystemMetrics(0)
+height = user32.GetSystemMetrics(1)
 
 def music():
     playsound("https://raw.githubusercontent.com/gaers-svg/ishowthneeds/main/getyopoopycomputerouttaherebro.mp3")
+
+def gdifunction():
+    music()
+    try:
+        while True:
+            g.StretchBlt(d, 0, 0, width, height, d, 0, 0, width, height, 0x00660046)
+            time.sleep(0.02)
+    except KeyboardInterrupt:
+        print("Stopped safely")
+
 
 def open(question, answer):
     response = messagebox.askyesno(question, answer)
     if response:
         print("You chose to continue.")
-        response2 = messagebox.askyesno("ishowthneeds", "this is your last chance, do you want to continue?")
+        response2 = messagebox.askyesno("ishowmalware", "this is your last chance, do you want to continue?")
         if response2:
-            messagebox.showerror("ishowthneeds", "you made a huge mistake.")
-            music()
             gdifunction()
+            messagebox.showerror("ishowmalware", "you made a huge mistake.")
         else:
             print("wise choice")
 open("Warning", "This program has the full potential to destroy your computer. Do you want to continue? ")
