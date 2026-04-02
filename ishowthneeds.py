@@ -1,29 +1,32 @@
-import io
 import tkinter as tk
 from tkinter import messagebox
 import time
-import subprocess
-import pygame
-import winsound
-import urllib.request
+import ctypes as c
+from playsound3 import playsound
 
+user32 = c.windll.user32
+d=c.windll.user32.GetDC(0)
+g=c.windll.gdi32
 def gdifunction():
     try:
-        while True: 
-            subprocess.run(["python", "-c", "import ctypes as c; g=c.windll.gdi32;d=c.windll.user32.GetDC(0);[g.StretchBlt(d, 5, 5, 1910, 1070, d, 0, 0, 1920, 1080, 0x999999) for _ in range(10**1)]"])
-            while pygame.mixer.music.get_busy():
-                time.sleep(0.1)
+        while True:
+           time.sleep(0.1)
+           g.stretchblt(d, 5, 5, 1910, 1070, d, 0, 0, 1920, 1080, 0x999999)
+    except KeyboardInterrupt:
+        g.DeleteDC(d)
+        print("poop!")
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
+def music():
+    playsound("https://raw.githubusercontent.com/gaers-svg/ishowthneeds/main/getyopoopycomputerouttaherebro.mp3")
 
 def open(question, answer):
     response = messagebox.askyesno(question, answer)
     if response:
         print("You chose to continue.")
-        response2 = messagebox.askyesno("ishowmalware", "this is your last chance, do you want to continue?")
+        response2 = messagebox.askyesno("ishowthneeds", "this is your last chance, do you want to continue?")
         if response2:
-            messagebox.showerror("ishowmalware", "you made a huge mistake.")
+            messagebox.showerror("ishowthneeds", "you made a huge mistake.")
+            music()
             gdifunction()
         else:
             print("wise choice")
