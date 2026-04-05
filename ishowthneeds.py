@@ -45,6 +45,7 @@ def gdifunction2():
                 hdc_mem.GetHandle_(), 0, 0, width // 2, height // 2, 
                 win32con.SRCCOPY
             )
+            time.sleep(0.1)
     except exception as e  :
         print("poopy computer")
 
